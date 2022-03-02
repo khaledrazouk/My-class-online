@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 1 -->
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div  class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+
+            <img src="images/Classroom_15.11.png" class="w-100"
+              style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Add a new classroom</h3>
+
+              <!-- th:each="newClassRoom : ${classrooms}" -->
+              <form class="px-md-2" th:action="@{/AddClassRoomForm}" method="post" enctype="multipart/form-data">
+              
+                <div  class="form-outline mb-4">
+                  <label  class="form-label" for="classroomname">Classroom name</label>
+
+                  <input type="text" id="classroomname"  class="form-control"
+                    th:field="${classRoom.classRoomName}">
+
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="cover"> image</label>
+
+                  <input type="file" class="form-control" id="cover" name="file" >
+
+                </div>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

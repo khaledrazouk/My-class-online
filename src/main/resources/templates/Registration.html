@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- 1 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration</title>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp" class="w-100"
+              style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Registration Info</h3>
+              <p th:if="${feedback}" th:text="${feedback}"></p>
+              <!-- 2 -->
+              <form class="px-md-2" th:action="@{/Registration}" method="post" enctype="multipart/form-data">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q"> First name</label>
+
+
+
+                  <input th:classappend="${#fields.hasErrors('user.firstName')}?'is-invalid':'is-valid'" type="text"
+                    required minlength="4" id="firstName" class="form-control" th:field="${user.firstName}"><!-- 3 -->
+                  <p class="m-0 text-danger" th:errors="${user.firstName}"></p>
+
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q"> Last name</label>
+
+                  <input th:classappend="${#fields.hasErrors('user.lastName')}?'is-invalid':'is-valid'" type="text"
+                    required minlength="4" id="lastName" class="form-control" th:field="${user.lastName}">
+                  <p class="m-0 text-danger" th:errors="${user.lastName}"></p>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Specialization</label>
+
+                  <input th:classappend="${#fields.hasErrors('user.specialization')}?'is-invalid':'is-valid'"
+                    type="text" required minlength="4" id="specialization" class="form-control"
+                    th:field="${user.specialization}">
+                  <p class="m-0 text-danger" th:errors="${user.specialization}"></p>
+                </div>
+                <div>
+                  <label for="w3review">Description:</label>
+
+                  <textarea th:field="${user.description}" rows="20" cols="50">
+
+
+</textarea>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q"> Email</label>
+
+                  <input th:classappend="${#fields.hasErrors('user.email')}?'is-invalid':'is-valid'" type="email"
+                    required minlength="4" id="email" class="form-control" th:field="${user.email}">
+                  <p class="m-0 text-danger" th:errors="${user.email}"></p>
+
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q"> Password</label>
+
+                  <input th:classappend="${#fields.hasErrors('user.password')}?'is-invalid':'is-valid'" type="password"
+                    required minlength="4" id="password" class="form-control" th:field="${user.password}">
+                  <p class="m-0 text-danger" th:errors="${user.password}"></p>
+
+
+
+
+                  <!-- <input th:classappend="${#fields.hasErrors('user.password')}?'is-invalid':'is-valid'" type="text"
+                    id="form3Example1q" class="form-control" />  -->
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="cover"> image</label>
+                  <input type="file" class="form-control" id="cover" name="file">
+
+
+
+
+
+
+
+                </div>
+                <p class="text-danger" th:errors="${user.password}"></p>
+                <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
