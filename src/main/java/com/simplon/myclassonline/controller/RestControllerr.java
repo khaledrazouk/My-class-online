@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestControllerr {
     @Autowired
    public UserRepository repo;
-    
-   @GetMapping("/api/displayAllTeachers")
-    public List<User> showAllTeachers(){
-        List<User> teachers = repo.findAll();
-        return teachers;
-    }
+   //just to show with javascript 
+//    @GetMapping("/api/displayAllTeachers")
+//     public List<User> showAllTeachers(){
+//         List<User> teachers = repo.findAll();
+//         return teachers;
+//     }
 }

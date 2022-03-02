@@ -64,17 +64,17 @@ public class UserController {
 
 
 // to check it if i need it or not because the user in the regestration page it will be a teacher in the same time
-    // @GetMapping("/showAllTeachers")
-    // public String showAllTeachers(Model model){
-    //     model.addAttribute("teachers",repo.findAll());
-    //     return "showAllTeachers";
-    // }
-
-
     @GetMapping("/showAllTeachers")
-    public String showAllTeachers(){
+    public String showAllTeachers(Model model){
+        model.addAttribute("teachers",repo.findAll());
         return "showAllTeachers";
     }
+
+// just to show the page with javascript
+    // @GetMapping("/showAllTeachers")
+    // public String showAllTeachers(){
+    //     return "showAllTeachers";
+    // }
 
     
 
