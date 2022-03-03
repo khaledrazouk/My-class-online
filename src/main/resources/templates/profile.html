@@ -20,11 +20,10 @@
     <link href="/css/style.css" rel="stylesheet" />
     <!-- responsive style -->
     <link href="/css/responsive.css" rel="stylesheet" />
-    <!-- this is for the text editor -->
-    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
     <!-- CDN FONT AWESOME -->
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <script src="https://kit.fontawesome.com/d65559be71.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body class="sub_page">
@@ -117,6 +116,7 @@
             <div class="col-sm-6 col-lg-3" v-for="user in users" :key="user.userId">
               <div  class="box">
                 <div class="img-box">
+                    
                   <img th:src="${teacher.image}" th:alt="${teacher.firstName}">
                 </div>
                 <div  class="detail-box" style="background-color: #b90202;">
@@ -149,16 +149,84 @@
     
 
 
-    <!-- footer section -->
-    <footer class="footer_section">
-        <div class="container">
-            <p>
-                &copy; <span id="displayYear"></span> All Rights Reserved By Khaled Razouk
-            </p>
-        </div>
-    </footer>
-    <!-- footer section -->
+      <section class="info_section ">
 
+        <div class="container">
+          <div class="info_top ">
+            <div class="row ">
+    
+              <div class="col-sm-6 col-md-4 col-lg-3" >
+                <div class="info_detail">
+                  <a href="index.html">
+                    <h4>
+                      My class Online
+                    </h4>
+                  </a>
+                  <p>
+                    Informations about My class online
+                  </p>
+                  <div class="social_box">
+                    <a href="">
+                      <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
+                <h4>
+                  Contact us
+                </h4>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                </p>
+                <div class="contact_nav">
+                  <a href="">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                      Location
+                    </span>
+                  </a>
+                  <a href="">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                      Call : +01 123455678990
+                    </span>
+                  </a>
+                  <p th:text="${teacher.email}"></p>
+                  <a  href="">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                      Email : demo@gmail.com
+                    </span>
+                  </a>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end info_section -->
+    
+    
+      <!-- footer section -->
+      <footer class="footer_section">
+        <div class="container">
+          <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By KHALED RAZOUK
+          </p>
+        </div>
+      </footer>
+      <!-- footer section -->
 
 
 
